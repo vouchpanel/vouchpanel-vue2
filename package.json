@@ -1,0 +1,59 @@
+{
+  "name": "@vouchpanel/vue",
+  "version": "1.1.6",
+  "description": "Use vouchpanel with Vue 2 & 3",
+  "license": "MIT",
+
+  "main": "dist/vouchpanel-vue2.ssr.js",
+  "browser": "dist/vouchpanel-vue2.esm.js",
+  "module": "dist/vouchpanel-vue2.esm.js",
+  "unpkg": "dist/vouchpanel-vue2.min.js",
+  "types": "vouchpanel-vue2.d.ts",
+
+  "files": [
+    "dist/*",
+    "vouchpanel-vue2.d.ts",
+    "src/**/*.vue"
+  ],
+  "sideEffects": false,
+
+  "scripts": {
+    "publish-npm": "npm publish --access public",
+    "serve": "vue-cli-service serve dev/serve.ts",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  },
+
+  "dependencies": {
+  },
+
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-replace": "^2.3.4",
+    "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-typescript": "^4.5.10",
+    "@vue/cli-service": "^4.5.10",
+    "cross-env": "^7.0.3",
+    "minimist": "^1.2.5",
+    "rollup": "^2.36.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^5.1.9",
+    "typescript": "^3.8.3",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.12"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

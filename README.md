@@ -12,6 +12,10 @@ Quickly embed a vouchpanel into your Vue project.
 
 ### How To Use
 
+If you are using Vue as a `Direct <script> Include`, please go to [link](https://vouchpanel.com/docs/vanillajs).
+
+If you are using Vue as a SPA use the instructions below.
+
 Install with yarn (or `npm install`):
 
 ```bash

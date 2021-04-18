@@ -1,34 +1,29 @@
 {
   "name": "@vouchpanel/vue",
   "version": "1.1.6",
-  "description": "Use vouchpanel with Vue 2 & 3",
+  "description": "Use Vouchpanel with Vue 2 & 3",
   "license": "MIT",
-
   "main": "dist/vouchpanel-vue2.ssr.js",
   "browser": "dist/vouchpanel-vue2.esm.js",
   "module": "dist/vouchpanel-vue2.esm.js",
   "unpkg": "dist/vouchpanel-vue2.min.js",
   "types": "vouchpanel-vue2.d.ts",
-
   "files": [
     "dist/*",
     "vouchpanel-vue2.d.ts",
     "src/**/*.vue"
   ],
   "sideEffects": false,
-
   "scripts": {
+    "readme": "cat _README.md > README.md && (curl https://raw.githubusercontent.com/vouchpanel/vouchpanel-site/main/docs/languages/vue.md) >> README.md",
     "publish-npm": "npm publish --access public",
     "serve": "vue-cli-service serve dev/serve.ts",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build": "yarn readme && cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
